@@ -19,32 +19,80 @@
     <link rel="manifest" href="/static/website/favicons/manifest.json">
     <link rel="mask-icon" href="/static/website/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="shortcut icon" href="/static/website/favicons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/static/website/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/static/website/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Convergence">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="msapplication-TileImage" content="/static/website/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/static/website/favicons/browserconfig.xml">
     <meta name="theme-color" content="#4f7096">
-  <style type="text/css">
-   html {
-     height: 50%;
-   }
-   body {
-     position: relative;
-     height: 100%;
-   }
-   #content {
-     position: absolute;
-     height: 122px;
-     width: 768px;
-     left: 50%;
-     bottom: 0;
-     margin-left: -384px;
-     text-align: center;
-   }
-  </style>
   </head>
   <body>
-    <div id="content">
-    <a href="https://github.com/python-telegram-bot/python-telegram-bot"><img src="https://github.com/python-telegram-bot/logos/raw/master/logo-text/png/ptb-logo-text_768.png?raw=true" /></a>
-    </div>
+  <img class="logo" width="128" src="https://github.com/python-telegram-bot/logos/blob/master/logo/png/ptb-logo_240.png?raw=true" />
+
+  <div class="content">
+    <section>
+        <header>
+
+            <hgroup>
+                <h1 class="title">python-telegram-bot</h1>
+                <h2 class="subtitle">Not just a Python wrapper around the
+                    Telegram Bot API</h2>
+            </hgroup>
+            <nav>
+                <ul>
+                    <li><a href="https://telegram.me/pythontelegrambotgroup">Community</a></li>
+                    <li><a href="https://github.com/python-telegram-bot/python-telegram-bot">Development</a></li>
+                    <li><a href="http://pythonhosted.org/python-telegram-bot/">Documentation</a></li>
+                    <li><a href="https://pypi.python.org/pypi/python-telegram-bot">Download</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <p class="buttons">
+            <a class="github-button" href="https://github.com/python-telegram-bot/python-telegram-bot" data-icon="octicon-star" data-count-href="/python-telegram-bot/python-telegram-bot/stargazers" data-count-api="/repos/python-telegram-bot/python-telegram-bot#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star python-telegram-bot/python-telegram-bot on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/python-telegram-bot/python-telegram-bot/fork" data-icon="octicon-repo-forked" data-count-href="/python-telegram-bot/python-telegram-bot/network" data-count-api="/repos/python-telegram-bot/python-telegram-bot#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork python-telegram-bot/python-telegram-bot on GitHub">Fork</a>
+        </p>
+    </section>
+
+    <section>
+        <br />
+        <h2>It's fun</h2>
+        <pre>from telegram.ext import Updater, CommandHandler
+
+def start(bot, update):
+    bot.sendMessage(update.message.chat_id, text='Hello World!')
+
+def hello(bot, update):
+    bot.sendMessage(update.message.chat_id,
+                    text='Hello {0}'.format(update.message.from_user.name))
+
+updater = Updater('<strong>YOUR TOKEN HERE</strong>')
+
+updater.dispatcher.addHandler(CommandHandler('start', start))
+updater.dispatcher.addHandler(CommandHandler('hello', hello))
+
+updater.start_polling()
+updater.idle()</pre>
+        <br />
+        <h2>Easy to setup</h2>
+        <pre>$ pip install python-telegram-bot==4.0rc1
+$ python bot.py</pre>
+        <br />
+        <h2>And it is free</h2>
+        <p>python-telegram-bot is distributed under a
+            <a href="http://www.gnu.org/licenses/lgpl-3.0.html">LGPLv3
+                license.</a></p>
+    </section>
+  </div>
+
+  <section>
+    <footer>
+      <p>© Copyright 2015-2016. Licensed by <a href="http://creativecommons.org/licenses/by/3.0/" rel="license" target="_blank">Creative Commons</a>.</p>
+    </footer>
+  </section>
+
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
