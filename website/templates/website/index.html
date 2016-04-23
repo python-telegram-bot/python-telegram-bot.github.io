@@ -21,6 +21,7 @@
     <link rel="shortcut icon" href="/static/website/favicons/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/static/website/reset.css" />
     <link rel="stylesheet" type="text/css" href="/static/website/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/website/code.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Convergence">
     <meta name="msapplication-TileColor" content="#2b5797">
@@ -60,26 +61,33 @@
     <section>
         <br />
         <h2>It's fun</h2>
-        <pre>from telegram.ext import Updater, CommandHandler
+        {% comment %}
+          The style sheet is generated with
+          pygmentize -f html -S tango > code.css
+          and the highlighted code underneath with
+          pygmentize -f html example.py
+        {% endcomment %}
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Updater</span><span class="p">,</span> <span class="n">CommandHandler</span>
 
-def start(bot, update):
-    bot.sendMessage(update.message.chat_id, text='Hello World!')
+<span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
 
-def hello(bot, update):
-    bot.sendMessage(update.message.chat_id,
-                    text='Hello {0}'.format(update.message.from_user.name))
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
+    <span class="n">bot</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat_id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
 
-updater = Updater('<strong>YOUR TOKEN HERE</strong>')
+<span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s1">&#39;YOUR TOKEN HERE&#39;</span><span class="p">)</span>
 
-updater.dispatcher.addHandler(CommandHandler('start', start))
-updater.dispatcher.addHandler(CommandHandler('hello', hello))
+<span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
+<span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">hello</span><span class="p">))</span>
 
-updater.start_polling()
-updater.idle()</pre>
+<span class="n">updater</span><span class="o">.</span><span class="n">start_polling</span><span class="p">()</span>
+<span class="n">updater</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>
+</pre></div>
         <br />
         <h2>Easy to setup</h2>
-        <pre>$ pip install python-telegram-bot==4.0rc1
-$ python bot.py</pre>
+        <div class="highlight"><pre>$ pip install python-telegram-bot<span class="o">==</span>4.0rc1
+$ python bot.py</pre></div>
         <br />
         <h2>And it is free</h2>
         <p>python-telegram-bot is distributed under a
