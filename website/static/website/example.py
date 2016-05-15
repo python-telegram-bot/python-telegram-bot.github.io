@@ -1,10 +1,10 @@
 from telegram.ext import Updater, CommandHandler
 
 def start(bot, update):
-    bot.send_message(update.message.chat_id, text='Hello World!')
+    bot.sendMessage(update.message.chat_id, text='Hello World!')
 
 def hello(bot, update):
-    bot.send_message(update.message.chat_id,
+    bot.sendMessage(update.message.chat_id,
                     text='Hello {0}'.format(update.message.from_user.first_name))
 
 updater = Updater('YOUR TOKEN HERE')
