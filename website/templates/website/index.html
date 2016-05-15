@@ -78,8 +78,8 @@
 
 <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s1">&#39;YOUR TOKEN HERE&#39;</span><span class="p">)</span>
 
-<span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
-<span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">hello</span><span class="p">))</span>
+<span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
+<span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">hello</span><span class="p">))</span>
 
 <span class="n">updater</span><span class="o">.</span><span class="n">start_polling</span><span class="p">()</span>
 <span class="n">updater</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>
