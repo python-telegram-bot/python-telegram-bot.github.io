@@ -28,7 +28,7 @@
     <meta name="msapplication-TileImage" content="/static/website/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/static/website/favicons/browserconfig.xml">
     <meta name="theme-color" content="#4f7096">
-    
+
     <meta property="og:title" content="python-telegram-bot" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://python-telegram-bot.org/" />
@@ -81,7 +81,7 @@
 
 <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
     <span class="n">bot</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat_id</span><span class="p">,</span>
-                    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="p">))</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="p">))</span>
 
 <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s1">&#39;YOUR TOKEN HERE&#39;</span><span class="p">)</span>
 
