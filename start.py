@@ -30,9 +30,10 @@ application = wsgiserver.WSGIPathInfoDispatcher(
 {
     '/': wsgi.application,
     settings.STATIC_URL[:-1]: make_static_config(settings.STATIC_URL[1:-1]),
-    settings.MEDIA_URL[:-1]: make_static_config(settings.MEDIA_URL[1:-1])
+    settings.MEDIA_URL[:-1]: make_static_config(settings.MEDIA_URL[1:-1]),
+    '/.well-known': make_static_config('.well-known'),  # Host files for letsencrypt
 })
-    
+
 cherrypy.config.update({'environment': 'production',
                 'log.error_file': 'site.log',
                 'log.screen': True})
