@@ -1,48 +1,61 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os
+import logging
+
+os.environ["DJANGO_SETTINGS_MODULE"] = "ptb_website.settings"
+
 import cherrypy
-from cherrypy import wsgiserver
+import django
+django.setup()
 
-from ptb_website import wsgi, settings
-
-from httplogger import HTTPLogger
+from django.conf import settings
+from django.core.handlers.wsgi import WSGIHandler
+from paste.translogger import TransLogger
 
 PATH = os.path.abspath(os.path.dirname(__file__))
 
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
 
-class Root(object):
-    pass
 
-def make_static_config(static_dir_name):
-    """
-    All custom static configurations are set here, since most are common, it
-    makes sense to generate them just once.
-    """
-    static_path = os.path.join('/', static_dir_name)
-    path = os.path.join(PATH, static_dir_name)
-    configuration = {static_path: {
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': path}
-    }
-    
-    return cherrypy.tree.mount(Root(), '/', config=configuration)
+class WebsiteApplication(object):
+    HOST = "127.0.0.1"
+    PORT = 8001
 
-application = wsgiserver.WSGIPathInfoDispatcher(
-{
-    '/': wsgi.application,
-    settings.STATIC_URL[:-1]: make_static_config(settings.STATIC_URL[1:-1]),
-    settings.MEDIA_URL[:-1]: make_static_config(settings.MEDIA_URL[1:-1]),
-    '/.well-known': make_static_config('.well-known'),  # Host files for letsencrypt
-})
+    def mount_static(self, url, root):
+        """
+        :param url: Relative url
+        :param root: Path to static files root
+        """
+        config = {
+            'tools.staticdir.on': True,
+            'tools.staticdir.dir': root,
+            'tools.expires.on': True,
+            'tools.expires.secs': 86400
+        }
+        cherrypy.tree.mount(None, url, {'/': config})
 
-cherrypy.config.update({'environment': 'production',
-                'log.error_file': 'site.log',
-                'log.screen': True})
+    def run(self):
+        cherrypy.config.update({
+            'environment': 'production',
+            'server.socket_host': self.HOST,
+            'server.socket_port': self.PORT,
+            'engine.autoreload_on': False,
+            'log.error_file': 'site.log',
+            'log.screen': True
+        })
+        self.mount_static(settings.STATIC_URL, settings.STATIC_ROOT)
+        self.mount_static('/.well-known', os.path.join(PATH, '.well-known'))
 
-server = wsgiserver.CherryPyWSGIServer(('127.0.0.1', 8001), HTTPLogger(application),
-                                       server_name='python-telegram-bot.org')
-try:
-    server.start()
-except KeyboardInterrupt:
-    print("Terminating server...")
-    server.stop()
+        cherrypy.log("Loading and serving Django application on /")
+        cherrypy.tree.graft(TransLogger(WSGIHandler()), '/')
+        cherrypy.engine.start()
+        cherrypy.log("Your app is running at http://%s:%s" % (self.HOST, self.PORT))
 
+        cherrypy.engine.block()
+
+
+if __name__ == "__main__":
+    WebsiteApplication().run()

@@ -89,6 +89,10 @@ footer {
     margin-top: 20px;
 }
 
-footer p {
+footer p.right {
     float: right;
+}
+
+footer p.left {
+    float: left;
 }
