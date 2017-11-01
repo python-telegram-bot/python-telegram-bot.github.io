@@ -28,6 +28,13 @@ div.content {
     overflow: auto;
 }
 
+h1 {
+    font-size: 30px;
+    font-family: 'Roboto Slab', sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+}
+
 h2 {
     font-size: 26px;
     font-family: 'Convergence', sans-serif;
@@ -35,11 +42,17 @@ h2 {
     margin: 0 0 5px 0;
 }
 
+h2.nocaps {
+    text-transform: none;
+}
+
 h1.title {
     font-size: 72px;
     text-align: right;
     line-height: 1.25;
     color: #646464;
+    text-transform: none;
+    margin: 0;
 }
 
 h2.subtitle {
@@ -89,10 +102,23 @@ footer {
     margin-top: 20px;
 }
 
-footer p.right {
+.right {
     float: right;
 }
 
-footer p.left {
+.left {
     float: left;
+}
+
+.spon-logo {
+    display: block;
+    float: left;
+    width: 250px;
+}
+
+.spon-text {
+    display: block;
+    float: left;
+    padding-left: 12px;
+    width: 460px;
 }

@@ -1,87 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>python-telegram-bot</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="/static/website/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/static/website/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/static/website/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/static/website/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/static/website/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/static/website/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/static/website/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/static/website/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/website/favicons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/static/website/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/static/website/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/static/website/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/static/website/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/static/website/favicons/manifest.json">
-    <link rel="mask-icon" href="/static/website/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/static/website/favicons/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/static/website/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/static/website/style.css" />
-    <link rel="stylesheet" type="text/css" href="/static/website/code.css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Convergence">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-TileImage" content="/static/website/favicons/mstile-144x144.png">
-    <meta name="msapplication-config" content="/static/website/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#4f7096">
+{% extends "website/base.html" %}
 
-    <meta property="og:title" content="python-telegram-bot" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://python-telegram-bot.org/" />
-    <meta property="og:image" content="https://github.com/python-telegram-bot/logos/raw/master/logo/png/ptb-logo_2048.png" />
-    <meta property="og:description" content="A Python framework for the Telegram Bot API" />
-    <meta property="og:determiner" content="" />
-  </head>
-  <body>
-  <img class="logo" width="128" src="https://github.com/python-telegram-bot/logos/blob/master/logo/png/ptb-logo_240.png?raw=true" />
+{% block dashtitle %}{% endblock %}
 
-  <div class="content">
-    <section>
-        <header>
-
-            <hgroup>
-                <h1 class="title">python-telegram-bot</h1>
-                <h2 class="subtitle">We have made you a wrapper you can't refuse</h2>
-            </hgroup>
-            <nav>
-                <ul>
-                    <li><a href="https://telegram.me/pythontelegrambotchannel">News</a></li>
-                    <li><a href="https://telegram.me/pythontelegrambotgroup">Community</a></li>
-                    <li><a href="https://github.com/python-telegram-bot/python-telegram-bot">Development</a></li>
-                    <li><a href="https://python-telegram-bot.readthedocs.io/">Documentation</a></li>
-                    <li><a href="https://github.com/python-telegram-bot/python-telegram-bot/wiki">Wiki</a></li>
-                    <li><a href="https://pypi.python.org/pypi/python-telegram-bot">Download</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <p class="buttons">
-            <a class="github-button" href="https://github.com/python-telegram-bot/python-telegram-bot" data-icon="octicon-star" data-count-href="/python-telegram-bot/python-telegram-bot/stargazers" data-count-api="/repos/python-telegram-bot/python-telegram-bot#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star python-telegram-bot/python-telegram-bot on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/python-telegram-bot/python-telegram-bot/fork" data-icon="octicon-repo-forked" data-count-href="/python-telegram-bot/python-telegram-bot/network" data-count-api="/repos/python-telegram-bot/python-telegram-bot#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork python-telegram-bot/python-telegram-bot on GitHub">Fork</a>
-        </p>
-    </section>
-
-    <section>
-        <br />
-        <h2>It's fun</h2>
-        {% comment %}
-          The style sheet is generated with
-          pygmentize -f html -S tango > code.css
-          and the highlighted code underneath with
-          pygmentize -f html example.py
-        {% endcomment %}
+{% block content %}
+<br />
+<h2>It's fun</h2>
+{% comment %}
+  The style sheet is generated with
+  pygmentize -f html -S tango > code.css
+  and the highlighted code underneath with
+  pygmentize -f html example.py
+{% endcomment %}
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Updater</span><span class="p">,</span> <span class="n">CommandHandler</span>
 
 <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
-    <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
-    <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span>
-        <span class="s1">&#39;Hello {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="p">))</span>
+<span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span>
+<span class="s1">&#39;Hello {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="p">))</span>
 
 <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s1">&#39;YOUR TOKEN HERE&#39;</span><span class="p">)</span>
 
@@ -91,26 +28,13 @@
 <span class="n">updater</span><span class="o">.</span><span class="n">start_polling</span><span class="p">()</span>
 <span class="n">updater</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>
 </pre></div>
-        <br />
-        <h2>Easy to setup</h2>
-        <div class="highlight"><pre><span class="gi">$</span> pip install python-telegram-bot
+<br />
+<h2>Easy to setup</h2>
+<div class="highlight"><pre><span class="gi">$</span> pip install python-telegram-bot
 <span class="gi">$</span> python bot.py</pre></div>
-        <br />
-        <h2>And it is free</h2>
-        <p>python-telegram-bot is distributed under a
-            <a href="https://www.gnu.org/licenses/lgpl-3.0.html">LGPLv3
-                license.</a></p>
-    </section>
-  </div>
-
-  <section>
-    <footer>
-      <p class="left"><a href="https://www.jetbrains.com/"><img src="/static/website/pycharm.png" height="43" width="43" /></a> &nbsp;</p>
-      <p class="left"><a href="https://www.jetbrains.com/">Made with<br>PyCharm</a></p>
-      <p class="right">© Copyright 2015-2017. Licensed by <a href="https://creativecommons.org/licenses/by/3.0/" rel="license" target="_blank">Creative Commons</a>.</p>
-    </footer>
-  </section>
-
-  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-  </body>
-</html>
+<br />
+<h2>And it is free</h2>
+<p>python-telegram-bot is distributed under a
+    <a href="https://www.gnu.org/licenses/lgpl-3.0.html">LGPLv3
+        license.</a></p>
+{% endblock %}
