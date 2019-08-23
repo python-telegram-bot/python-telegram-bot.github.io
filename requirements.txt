@@ -1,4 +1,4 @@
-django
+django>=2
 cherrypy
 paste
 git+https://github.com/natevw/django-sameas.git@master#egg=django-sameas
