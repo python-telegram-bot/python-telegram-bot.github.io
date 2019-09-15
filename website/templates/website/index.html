@@ -20,7 +20,7 @@
         <span class="s1">&#39;Hello {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span cla ss="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="p">))</span>
 
 
-<span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s1">&#39;YOUR TOKEN HERE&#39;</span><span class="p">)</span>
+<span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s1">&#39;YOUR TOKEN HERE&#39;</span><span class="p">,</span> <span class="n">use_context</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">hello</span><span class="p">))</span>
 

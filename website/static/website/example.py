@@ -6,7 +6,7 @@ def hello(update, context):
         'Hello {}'.format(update.message.from_user.first_name))
 
 
-updater = Updater('YOUR TOKEN HERE')
+updater = Updater('YOUR TOKEN HERE', use_context=True)
 
 updater.dispatcher.add_handler(CommandHandler('hello', hello))
 
