@@ -1,12 +1,12 @@
-from telegram.ext import Updater, CommandHandler
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
 
 
-def hello(update, context):
-    update.message.reply_text(
-        'Hello {}'.format(update.message.from_user.first_name))
+def hello(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text(f'Hello {update.effective_user.first_name}')
 
 
-updater = Updater('YOUR TOKEN HERE', use_context=True)
+updater = Updater('YOUR TOKEN HERE')
 
 updater.dispatcher.add_handler(CommandHandler('hello', hello))
 
