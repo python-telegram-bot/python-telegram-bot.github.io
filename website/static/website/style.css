@@ -122,3 +122,27 @@ footer {
     padding-left: 12px;
     width: 460px;
 }
+
+.window {
+  width: calc(100% - 10px);
+  border-radius: 0.5rem;
+  box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.window .window-header {
+  height: 37px;
+  background: Gainsboro;
+  position: relative;
+}
+.window .window-header .action-buttons {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  background: Crimson;
+  border-radius: 50%;
+  box-shadow: 15px 0 0 Orange,
+				30px 0 0 LimeGreen;
+}
