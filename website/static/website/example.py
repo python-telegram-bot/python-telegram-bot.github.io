@@ -1,14 +1,13 @@
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 
-def hello(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text(f'Hello {update.effective_user.first_name}')
+async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text(f'Hello {update.effective_user.first_name}')
 
 
-updater = Updater('YOUR TOKEN HERE')
+app = ApplicationBuilder().token("YOUR TOKEN HERE").build()
 
-updater.dispatcher.add_handler(CommandHandler('hello', hello))
+app.add_handler(CommandHandler("hello", hello))
 
-updater.start_polling()
-updater.idle()
+app.run_polling()
