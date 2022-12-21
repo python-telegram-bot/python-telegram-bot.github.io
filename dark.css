@@ -187,6 +187,10 @@
         background-image: initial;
         background-color: rgb(44, 47, 49);
     }
+    summary {
+        background-image: initial;
+        background-color: rgb(44, 47, 49);
+    }
     .window .window-header .action-buttons {
         background-image: initial;
         background-color: rgb(176, 16, 48);
