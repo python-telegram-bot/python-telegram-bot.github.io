@@ -89,34 +89,48 @@
 		<br>
 		<h1>Verifying releases</h1>
 
-		<p>
-			We sign all the releases with a GPG key.
-			The signatures are uploaded to both the <a
-				href="https://github.com/python-telegram-bot/python-telegram-bot/releases">GitHub
-			releases page</a> and the <a href="https://pypi.org/project/python-telegram-bot/">PyPI
-			project</a> and end with a suffix <code>.asc</code>.
-			Please find the public keys below.
-			The keys are named in the format
-			<code>&lt;first_version&gt;-&lt;last_version&gt;.gpg</code> or <code>&lt;first_version&gt;-current.gpg</code>
-			if the key is currently being used for new releases.
-		</p>
-		<br>
-		<p>
-			In addition, the GitHub release page also contains the sha1 hashes of the release files
-			in the files with the suffix <code>.sha1</code>.
-		</p>
-		<br>
-		<p>
-			This allows you to verify that a release file that you downloaded was indeed provided by
-			the <code>python-telegram-bot</code> team.
-		</p>
-		<br>
+        <p>
+            To enable you to verify that a release file that you downloaded was indeed provided by
+            the <code>python-telegram-bot</code> team, we have taken the following measures.
+        </p>
+        <br>
+        <p>
+            Starting with v21.4, all releases are signed via <a href="https://sigstore.dev">sigstore</a>.
+            The corresponding signature files are uploaded to the <a
+                href="https://github.com/python-telegram-bot/python-telegram-bot/releases">GitHub
+            releases page</a>.
+            To verify the signature, please install the <a
+                href="https://pypi.org/project/sigstore/">sigstore Python client</a> and follow the
+            instructions for <a
+                href="https://github.com/sigstore/sigstore-python#signatures-from-github-actions">verifying
+            signatures from GitHub Actions</a>. As input for the <code>--repository</code>
+            parameter, please use the value <code>python-telegram-bot/python-telegram-bot</code>.
+        </p>
+        <br>
+        <p>
+            Earlier releases are signed with a GPG key.
+            The signatures are uploaded to both the <a
+                href="https://github.com/python-telegram-bot/python-telegram-bot/releases">GitHub
+            releases page</a>
+            and the <a href="https://pypi.org/project/python-telegram-bot/">PyPI project</a> and end
+            with a suffix <code>.asc</code>.
+            Please find the public keys below or <a
+                href="https://github.com/python-telegram-bot/python-telegram-bot/tree/master/public_keys">here</a>.
+            The keys are named in the format
+            <code>&lt;first_version&gt;-&lt;last_version&gt;.gpg</code>.
+        </p>
+        <br>
+        <p>
+            In addition, the GitHub release page also contains the sha1 hashes of the release files
+            in the files with the suffix <code>.sha1</code>.
+        </p>
+        <br>
 
 		<h2>Public keys</h2>
 
 		<div class="window">
 			<details>
-				<summary><div class="file-name">v20.0-current.gpg</div></summary>
+				<summary><div class="file-name">v20.0-v21.3.gpg</div></summary>
 				<pre>
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
