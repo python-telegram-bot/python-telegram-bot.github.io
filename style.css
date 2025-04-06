@@ -114,12 +114,18 @@ footer {
     display: block;
     float: left;
     width: 250px;
+    padding: 20px;
+    padding-left: 0;
+}
+
+.spon-logo-dark {
+    display: none;
 }
 
 .spon-text {
-    display: block;
+    /*display: block;*/
     float: left;
-    padding-left: 12px;
+    /*padding-left: 12px;*/
     width: 460px;
 }
 
